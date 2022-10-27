@@ -15,17 +15,23 @@ for k, v in pairs(items) do
     items[k] = chest.getItemMeta(k)
 end
 
-local isGrey = true
+local isGray = true
 for k, v in pairs(items) do
-    if isGrey then
-        itemsWindow.setBackgroundColour(colours.lightGrey)
-        isGrey = false
+    if isGray then
+        itemsWindow.setBackgroundColour(colors.gray)
+        isGray = false
     else
-        itemsWindow.setBackgroundColour(colours.black)
-        isGrey = true
+        itemsWindow.setBackgroundColour(colors.black)
+        isGray = true
     end
     
-    itemsWindow.write(items[k].displayName .. " " .. items[k].count)
+    local displayString = items[k].displayName .. " " .. items[k].count
+    for i = 1, 19 - #displayString do
+        displayString = displayString .. " "
+    end
+    itemsWindow.write()
+    local cursorX, cursorY = window.getCursorPos()
+    -- window.setCursorPos(1, cursorY + 1)
 end
 
 itemsWindow.setVisible(true)
