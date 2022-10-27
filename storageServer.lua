@@ -3,9 +3,14 @@
 local listeningChannel = 8001
 local periList = peripheral.getNames()
 
-peripheral.find("modem", rednet.open)
+local chest = peripheral.wrap("left")
+local items = chest.list()
 
+local itemsWindow = window.create(term.current(), 1, 3, 51, 19-2, false)
+itemsWindow.setBackgroundColour(colours.red)
+itemsWindow.setTextColour(colours.white)
+itemsWindow.clear()
+itemsWindow.write("Testing my window!")
+itemsWindow.setVisible(true)
 
-while true do
-    os.pullEvent("modem_message")
-end
+os.sleep(4)
