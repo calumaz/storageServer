@@ -30,8 +30,8 @@ for k, v in pairs(items) do
         displayString = displayString .. " "
     end
     itemsWindow.write()
-    local cursorX, cursorY = window.getCursorPos()
-    -- window.setCursorPos(1, cursorY + 1)
+    local cursorX, cursorY = itemsWindow.getCursorPos()
+    -- itemsWindow.setCursorPos(1, cursorY + 1)
 end
 
 itemsWindow.setVisible(true)
