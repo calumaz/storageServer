@@ -3,7 +3,7 @@
 local listeningChannel = 8001
 local periList = peripheral.getNames()
 
-local chest = peripheral.wrap("left")
+local chest = peripheral.wrap("right")
 local items = chest.list()
 
 local itemsWindow = window.create(term.current(), 1, 3, 51, 15, false)
